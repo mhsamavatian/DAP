@@ -13,9 +13,9 @@ Deep Models are using LSTM and FC layers to predict accident risk.
 ## How to Run the Code? 
 Download the CSV dataset from here: https://smoosavi.org/datasets/us_accidents
 
-Run step1-cleaning-func and step2-acc_prediction_training_preparation in Step1-preparing for training folder
+Run step1-cleaning-func and step2-acc_prediction_training_preparation in "Step1-preparing for training" folder
 
-Run script in DAB and baseline model to train different models. 
+Run script in DAB and baseline to train different models. 
 
 
 
