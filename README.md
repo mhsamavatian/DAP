@@ -21,12 +21,10 @@ Implementation of this model can be find in `2-DAP` directory.
 In terms of baselines we employed three models: Logistic Regressions (LR), Gradient Boosted classifier (GBC), and a FeedForward Neural Network Model (DNN). Implementation of this models can be find in `3-Baselines`. There you find one `python` script for each baseline, with instruction on how to run each script provided inside the script. 
 
 ## How to Run the Code? 
-All codes and imeplementations are in `python`, with deep learning models developed in `Keras` using `Tensorflow` as backend. For non-deep learning baselines (i.e., LR and GBC) you can run codes on CPU machines. But for deep-learning models we recommend using GPU machines to speed-up the process. 
+All implementations are in `python`, with deep learning models developed in `Keras` using `Tensorflow` as backend. For non-deep learning baselines (i.e., LR and GBC) you can run codes on CPU machines. But for deep-learning models we recommend using GPU machines to speed-up the process. 
 
 Run step1-cleaning-func and step2-acc_prediction_training_preparation in "Step1-preparing for training" folder
 Run script in DAB and baseline to train different models. 
-
-
 
 ## Acknowledgment 
 * Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, Radu Teodorescu, and Rajiv Ramnath. “Accident Risk Prediction based on Heterogeneous Sparse Data: New Dataset and Insights” In proceedings of the 27th ACM SIGSPATIAL, International Conference on Advances in Geographic Information Systems. ACM, 2019. 
