@@ -1,7 +1,7 @@
 # Accident Risk Prediction based on Heterogeneous Sparse Data: New Dataset and Insights (ACM SIGSPATIAL 2019)
 
 ## Data
-The main data for this work is obtained from [US Accidents](https://smoosavi.org/datasets/us_accidents) and [Large Scale Traffic and Weather Events](https://smoosavi.org/datasets/lstw) datasets. Please visit our paper to learn how to use the raw input datasets and prepare them for our real-time accident prediction framework. Also, several sample data files can be find in ```data``` directory. 
+The main data for this work is obtained from [US Accidents](https://smoosavi.org/datasets/us_accidents) and [Large Scale Traffic and Weather Events](https://smoosavi.org/datasets/lstw) datasets. Please visit [our paper](https://arxiv.org/pdf/1909.09638.pdf) to learn how to use the raw input datasets and prepare them for our real-time accident prediction framework. Also, several sample data files can be find in ```data``` directory. 
 
 ## Generate Input
 One important process is to transform raw input data to the form of input for a machine learning model. Here we employed multiple processes as follows:
