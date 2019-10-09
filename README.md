@@ -1,6 +1,7 @@
 # Accident Risk Prediction based on Heterogeneous Sparse Data: New Dataset and Insights (ACM SIGSPATIAL 2019)
 
 ## Data
+The main data for this work is obtained from [US Accidents](https://smoosavi.org/datasets/us_accidents) and [Large Scale Traffic and Weather Events](https://smoosavi.org/datasets/lstw) datasets. Several sample data files can be find in ```data``` directory. 
 
 ## Generate Input
 
