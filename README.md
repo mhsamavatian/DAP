@@ -1,15 +1,16 @@
 # Accident Risk Prediction based on Heterogeneous Sparse Data: New Dataset and Insights (ACM SIGSPATIAL 2019)
 
 ## Data
-The main data for this work is obtained from [US Accidents](https://smoosavi.org/datasets/us_accidents) and [Large Scale Traffic and Weather Events](https://smoosavi.org/datasets/lstw) datasets. Several sample data files can be find in ```data``` directory. 
+The main data for this work is obtained from [US Accidents](https://smoosavi.org/datasets/us_accidents) and [Large Scale Traffic and Weather Events](https://smoosavi.org/datasets/lstw) datasets. Please visit our paper to learn how to use the raw input datasets and prepare them for our real-time accident prediction framework. Also, several sample data files can be find in ```data``` directory. 
 
 ## Generate Input
 
 ## Baseline Models
-Baseline models are Logistic Regressions (LR) and Gradient Boosted classifier  (GBC) implementations.
+In terms of baselines we employed three models: Logistic Regressions (LR), Gradient Boosted classifier (GBC), and a FeedForward Neural Network Model (DNN). 
 
 ## DAP Model
-Deep Models are using LSTM and FC layers to predict accident risk. 
+Our Deep Accident Prediction model comprise several important components including _Recurrent Component_, _Embedding Component_, _Description-to-Vector Component_, _Points-Of-Interest Component_, and _Fully-connected Component_. The following image shows a demonstration of this model: <center><img src="/files/D-CRNN_2.png" width="1100"></center>
+
 
 ## How to Run the Code? 
 Download the CSV dataset from here: https://smoosavi.org/datasets/us_accidents
