@@ -12,19 +12,16 @@ One important process is to transform raw input data to the form of input for a 
 
 Implementations of these steps can be find in `1-GenerateFeatureVector`, with one `python` script for each step. 
 
-## Baseline Models
-In terms of baselines we employed three models: Logistic Regressions (LR), Gradient Boosted classifier (GBC), and a FeedForward Neural Network Model (DNN). Implementation of this models can be find in `3-Baselines`. There you find one `python` script for each baseline, with instruction on how to run each script provided inside the script. 
-
 ## DAP Model
 Our Deep Accident Prediction model comprises several important components including _Recurrent Component_, _Embedding Component_, _Description-to-Vector Component_, _Points-Of-Interest Component_, and _Fully-connected Component_. The following image shows a demonstration of this model: <center><img src="/files/dap.png" width="600"></center>
 
 Implementation of this model can be find in `2-DAP` directory. 
 
+## Baseline Models
+In terms of baselines we employed three models: Logistic Regressions (LR), Gradient Boosted classifier (GBC), and a FeedForward Neural Network Model (DNN). Implementation of this models can be find in `3-Baselines`. There you find one `python` script for each baseline, with instruction on how to run each script provided inside the script. 
+
 ## How to Run the Code? 
-Download the CSV dataset from here: https://smoosavi.org/datasets/us_accidents
-
 Run step1-cleaning-func and step2-acc_prediction_training_preparation in "Step1-preparing for training" folder
-
 Run script in DAB and baseline to train different models. 
 
 
