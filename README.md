@@ -12,7 +12,7 @@ One important process is to transform raw input data to the form of input for a 
 
 Implementations of these steps can be find in `1-GenerateFeatureVector`, with one `python` script for each step. 
 
-## DAP Model
+## Deep Accident Prediction (DAP) Model
 Our Deep Accident Prediction model comprises several important components including _Recurrent Component_, _Embedding Component_, _Description-to-Vector Component_, _Points-Of-Interest Component_, and _Fully-connected Component_. The following image shows a demonstration of this model: <center><img src="/files/dap.png" width="600"></center>
 
 Implementation of this model can be find in `2-DAP` directory. 
