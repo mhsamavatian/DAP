@@ -6,7 +6,7 @@ The main data for this work is obtained from [US Accidents](https://smoosavi.org
 ## Generate Input
 
 ## Baseline Models
-In terms of baselines we employed three models: Logistic Regressions (LR), Gradient Boosted classifier (GBC), and a FeedForward Neural Network Model (DNN). 
+In terms of baselines we employed three models: Logistic Regressions (LR), Gradient Boosted classifier (GBC), and a FeedForward Neural Network Model (DNN). Implementation of this models can be find in `3-Baselines`. There you find one `python` script for each baseline, with instruction on how to run each script provided inside the script. 
 
 ## DAP Model
 Our Deep Accident Prediction model comprises several important components including _Recurrent Component_, _Embedding Component_, _Description-to-Vector Component_, _Points-Of-Interest Component_, and _Fully-connected Component_. The following image shows a demonstration of this model: <center><img src="/files/dap.png" width="600"></center>
