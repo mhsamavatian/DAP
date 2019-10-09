@@ -9,8 +9,9 @@ The main data for this work is obtained from [US Accidents](https://smoosavi.org
 In terms of baselines we employed three models: Logistic Regressions (LR), Gradient Boosted classifier (GBC), and a FeedForward Neural Network Model (DNN). 
 
 ## DAP Model
-Our Deep Accident Prediction model comprise several important components including _Recurrent Component_, _Embedding Component_, _Description-to-Vector Component_, _Points-Of-Interest Component_, and _Fully-connected Component_. The following image shows a demonstration of this model: <center><img src="/files/dap.png" width="600"></center>
+Our Deep Accident Prediction model comprises several important components including _Recurrent Component_, _Embedding Component_, _Description-to-Vector Component_, _Points-Of-Interest Component_, and _Fully-connected Component_. The following image shows a demonstration of this model: <center><img src="/files/dap.png" width="600"></center>
 
+Implementation of this model can be find in `2-DAP` directory. 
 
 ## How to Run the Code? 
 Download the CSV dataset from here: https://smoosavi.org/datasets/us_accidents
