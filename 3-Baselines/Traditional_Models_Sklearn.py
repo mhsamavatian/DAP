@@ -3,8 +3,9 @@
     
     Content: This code is to perform accident prediction based on Logistic Regression and Gradient Boosting Decision Classifier. 
     Input: The input for these models is a feature vector consisting of traffic, time, weather, POI (geohash), and Desc2Vec(NLP) data. 
-        - See section 5.1 of paper for more details about these categories of featuers. 
-    Process: The process is to employ data from the past 2 hours to make prediction for the current 15 minutes time interval.     
+        - See section 5.1 of paper for more details about these categories of features. 
+    Process: The process is to employ data from the past 2 hours to make prediction for the current 15 minutes time interval.    
+ 
 '''
 
 import pandas as pd
