@@ -1,3 +1,13 @@
+'''
+    Authors: Sobhan Moosavi, Mohammad H. Samavatian
+    
+    Content: This code is to perform accident prediction based on Logistic Regression and Gradient Boosting Decision Classifier. 
+    Input: The input for these models is a feature vector consisting of traffic, time, weather, POI (geohash), and Desc2Vec(NLP) data. 
+        - See section 5.1 of paper for more details about these categories of features. 
+    Process: The process is to employ data from the past 2 hours to make prediction for the current 15 minutes time interval.    
+ 
+'''
+
 import pandas as pd
 import numpy as np
 import random
@@ -18,9 +28,9 @@ from sklearn.metrics import make_scorer
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import GradientBoostingClassifier as GBC
-
 import argparse
 
+# Input parameters are name of City, and number of times to run each classifier to report average results. 
 parser = argparse.ArgumentParser()
 parser.add_argument('--city', type=str, default='Atlanta')
 parser.add_argument('--repeats', type=int, default=3)
@@ -38,6 +48,8 @@ class WithExtraArgs(object):
         self.args = args
     def __call__(self, df):
         return self.func(df, **self.args)
+
+''' Helper functions to support parall computing'''
 
 def applyParallel(data, func,pool,partition, kwargs):
     data_split = [data[i:i + partition] for i in xrange(0, len(data), partition)]
@@ -74,6 +86,7 @@ def reshape_cat(array,category):
     else:
         return array[:,-114:-100]
 
+''' A helper function to simply data loading, training, and test processes for traditional models '''
 class base_model(object): 
        
     def __init__(self,n_jobs=-1,metric='f1_score'): 
@@ -88,6 +101,7 @@ class base_model(object):
             print ('not valid metric')
         pass 
    
+    # to load train and test data (these sets are pre-generated as numpy arrays)
     def load_data(self,category=None):
         print ('load and test: shapes for train and test X and Y')
         self.X_train = np.load('train_set/X_train_'+CITY+'.npy')[:,0:-1]
@@ -112,7 +126,8 @@ class base_model(object):
         print (self.y_train.shape)
         print (self.X_test.shape)
         print (self.y_test.shape)
-        
+    
+    # this function performs train process
     def train(self):
         cv = ShuffleSplit(n_splits=5, test_size=0.2, random_state=0)
         
@@ -131,25 +146,28 @@ class base_model(object):
                   % (mean, std * 2, params))
         return self.clf.best_params_
        
-    def evaluate(self):
-        
+    # this function perform evaluation (testing)
+    def evaluate(self):        
         y_true, y_pred = self.y_test, self.clf.predict(self.X_test)
         print(classification_report(y_true, y_pred))
         dict_out = classification_report(y_true, y_pred,output_dict=True)
         return dict_out
 
+''' To setup the Logistic Regression model in SKlearn '''
 class model_LR_SKlearn(base_model):
     def create_model(self):
         self.tuned_parameters = [{'penalty': ['l2'],'max_iter':[100,1000,10000,100000],'solver':['newton-cg', 'lbfgs' ,'sag'], 'n_jobs':[10]},
                                  {'penalty': ['l1'],'max_iter':[100,1000,10000,100000],'solver':['liblinear', 'saga'],'n_jobs':[1]}]
         self.model = LogisticRegression(verbose=0)
 
+''' To setup the Gradient Boosting Classifier model in SKlearn '''
 class model_GBC_SKlearn(base_model):
     def create_model(self):
         self.tuned_parameters = {'learning_rate':[0.1,0.15,0.05,0.01],'n_estimators': [100,200,300,400], 
                                  'max_depth': [3,4,5,6]}
         self.model = GBC(n_iter_no_change=15)
 
+''' A helper function to to setup the model, load data, perform train, and test '''
 def make_models(city='Atlanta',model='LR',category=None,metric='precision'):
     CITY = city
     if model=='LR':
@@ -170,7 +188,7 @@ writer.write('Model,Category,ReportType,F1,Precision,Recall,Support\n')
 writer.close()
 
 for m in models:
-    for c in categories:
+    for c in categories: # when using None as category, it will use the entire set of input features
         print '\n', m, c
         No_Acc   = []
         Acc      = []        
@@ -204,6 +222,7 @@ for m in models:
         else:
             c = 'All'
         
+        # to write the output result in terms of a CSV file
         writer = open('Results/Traditional_For_{}.csv'.format(CITY), 'a')
         writer.write('{},{},{},{},{},{},{}\n'.format(m,c,'No-Accident',round(No_Acc[0], 4), round(No_Acc[1], 4), round(No_Acc[2], 4), int(No_Acc[3])))
         writer.write('{},{},{},{},{},{},{}\n'.format(m,c,'Accident',round(Acc[0], 4), round(Acc[1], 4), round(Acc[2], 4), int(Acc[3])))
