@@ -14,7 +14,7 @@ One important process is to transform raw input data into the form of input for 
 
 * __Step 4__: Run `4-FinalTrainAndTestDataPreparation.ipynb` to prepare final train and test data. This includes creating sample entries, and negative sampling for non-accident data samples. 
 
-Implementations of these steps can be found in `1-GenerateFeatureVector`, with one `python` script for each step. 
+Implementations of these steps can be found in `1-GenerateFeatureVector`. Also, note that the sample data and codes are for those cities that we used in the paper. 
 
 ## Deep Accident Prediction (DAP) Model
 Our Deep Accident Prediction model comprises several important components including _Recurrent Component_, _Embedding Component_, _Description-to-Vector Component_, _Points-Of-Interest Component_, and _Fully-connected Component_. The following image shows a demonstration of this model: <center><img src="/files/dap.png" width="600"></center>
