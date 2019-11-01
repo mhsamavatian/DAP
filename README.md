@@ -10,7 +10,7 @@ One important process is to transform raw input data into the form of input for 
 
 * __Step 2__: Run `2-CreateNaturalLanguageRepresentationForGeoHashes.ipynb` to generate description to vector representation for geographical regions. The main inputs for this process are [LSTW](https://smoosavi.org/datasets/lstw) and [GloVe](https://nlp.stanford.edu/projects/glove/). A sample output can be find as `data/geohash_to_text_vec.csv`. 
 
-* __Step 3__: Run `3-Feature Vector Integration.ipynb` for data cleaning, integration, and adding time information. 
+* __Step 3__: Run `3-DataCleaningAndIntegration.ipynb` for data cleaning, integration, and adding time information. 
 
 * __Step 4__: Run `4-FinalTrainAndTestDataPreparation.ipynb` to prepare final train and test data. This includes creating sample entries, and negative sampling for non-accident data samples. 
 
