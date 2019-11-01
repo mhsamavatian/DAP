@@ -6,7 +6,7 @@ The main data for this work is obtained from [US Accidents](https://smoosavi.org
 ## Generate Input
 One important process is to transform raw input data to the form of input for a machine learning model. Here we employed multiple processes as follows:
 
-* Step 1: 
+* Step 1: Run `1-CreateInputForAccidentPrediction.ipynb` from `/1-GenerateFeatureVector` to generate raw feature vectors. Each vector represents a geographical region of size 5km x 5km (that we call it a geohash) during a 15 minutes time interval. This code uses [LSTW](https://smoosavi.org/datasets/lstw) dataset for traffic events data, raw weather observation records for weather related attributes (check `data/Sample_Weather.tar.gz` for sample data), and daylight information (check `data/sample_daylight.csv` for sample data). 
 * Step 2: 
 * Step 3: 
 
