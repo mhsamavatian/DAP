@@ -8,7 +8,6 @@ import numpy as np
 import keras
 import random
 
-from keras.models import Sequential,Model
 from keras.layers import Dense,LSTM,Activation,Dropout,BatchNormalization,Input,Embedding
 from keras.layers import Flatten,Conv2D,MaxPooling2D,Bidirectional,concatenate
 
