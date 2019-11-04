@@ -43,7 +43,7 @@ partitions = cores
 SEQ=8
 
 
-''' A Helper function to re-shape input '''
+''' A Helper function to select a category of features to be used to construct the feature vector '''
 def reshape_cat(array,category):
     l=[]
     b = array[:,0:-14]
@@ -160,11 +160,20 @@ def make_models(city='Atlanta',model='LR',category=None,metric='precision'):
     dict_out = mypred.evaluate()
     return pd.DataFrame(dict_out),best_params
 
-# this code would use these models
-models     = ['LR', 'GBC']
+# This script would use these models
+models = ['LR', 'GBC']
 
-# this code would test different feature categories separately, and also the set of all data attributes 
-categories = [None, ['traffic'], ['time'], ['weather'], ['geohash'], ['NLP']]
+''' 
+    Category traffic: traffic data that includes 7 attributes (see Section 5.1 of the paper)
+    Category time: time data that includes 7 attributes (see Section 5.1 of the paper)
+    Category weather: weather data that includes 10 attributes (see Section 5.1 of the paper)
+    Category geohash: POI data that includes 13 attributes (see Section 5.1 of the paper)
+    Category NLP: Desc2Vec data that includes 100 attributes (see Section 5.1 of the paper)
+'''
+# This code would test different feature categories separately, and also the set of all data attributes 
+# you can also have choices such as ['traffic','time'] or ['traffic','weather','NLP']
+categories = [None, ['traffic'], ['time'], ['weather'], ['geohash'], ['NLP']] 
+
 
 writer = open('Results/Traditional_For_{}.csv'.format(CITY), 'w')
 writer.write('Model,Category,ReportType,F1,Precision,Recall,Support\n')
