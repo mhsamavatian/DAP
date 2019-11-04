@@ -32,8 +32,5 @@ In terms of baselines, we employed the following models:
 ## How to Run the Code? 
 All implementations are in `python`, with deep learning models developed in `Keras` using `Tensorflow` as backend. For non-deep learning baselines (i.e., LR and GBC) you can run codes on CPU machines. But for deep-learning models, we recommend using GPU machines to speed-up the process. 
 
-Run step1-cleaning-func and step2-acc_prediction_training_preparation in "Step1-preparing for training" folder
-Run the script in DAB and baseline to train different models. 
-
 ## Acknowledgment 
 * Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, Radu Teodorescu, and Rajiv Ramnath. “Accident Risk Prediction based on Heterogeneous Sparse Data: New Dataset and Insights” In proceedings of the 27th ACM SIGSPATIAL, International Conference on Advances in Geographic Information Systems. ACM, 2019. 
