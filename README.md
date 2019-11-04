@@ -10,11 +10,11 @@ One important process is to transform raw input data into the form of input for 
 
 * __Step 2__: Run `2-CreateNaturalLanguageRepresentationForGeoHashes.ipynb` to generate description to vector representation for geographical regions. The main inputs for this process are [LSTW](https://smoosavi.org/datasets/lstw) and [GloVe](https://nlp.stanford.edu/projects/glove/). A sample output can be find as `data/geohash_to_text_vec.csv`. 
 
-* __Step 3__: Run `3-DataCleaningAndIntegration.ipynb` for data cleaning, integration, and adding time information. 
+* __Step 3__: Run `3-DataCleaningAndIntegration.ipynb` for data cleaning, and preparation for integration with POI data. 
 
 * __Step 4__: Run `4-FinalTrainAndTestDataPreparation.ipynb` to prepare final train and test data. This includes creating sample entries, and negative sampling for non-accident data samples. 
 
-Implementations of these steps can be found in `1-GenerateFeatureVector`. Also, note that the sample data and codes are for those cities that we used in the paper. 
+Implementations of these steps can be found in `1-GenerateFeatureVector`. Also, note that the sample data and codes are for those cities that we used in the paper (e.g., Atlanta, Austin, Charlotte, Dalas, Houston, and Los Angeles). 
 
 ## Deep Accident Prediction (DAP) Model
 Our Deep Accident Prediction model comprises several important components including _Recurrent Component_, _Embedding Component_, _Description-to-Vector Component_, _Points-Of-Interest Component_, and _Fully-connected Component_. The following image shows a demonstration of this model: <center><img src="/files/dap.png" width="600"></center>
