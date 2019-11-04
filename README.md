@@ -16,7 +16,7 @@ One important process is to transform raw input data into the form of input for 
 
 Implementations of these steps can be found in `1-GenerateFeatureVector`. Also, note that the sample data and codes are for those cities that we used in the paper (e.g., Atlanta, Austin, Charlotte, Dallas, Houston, and Los Angeles). 
 
-## Sample Data File For Train and Test
+## Sample Data Files For Train and Test
 To train and test our proposed model and the baselines, you can use our pre-generated train and test files for six cities Atlanta, Austin, Charlotte, Dallas, Houston, and Los Angeles. The time frame to generate sample data for these cities is the same as what we described in our paper. You can find these files in `data/train_set.7z`. Use `7za -e train_set.7z` to decompress this file and obtain 4 numpy (.npy) files per city. Two files contain feature vectors for train and test, and two files contain train and test labels. 
 
 ## Deep Accident Prediction (DAP) Model
