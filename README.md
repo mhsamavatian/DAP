@@ -19,10 +19,15 @@ To train and test our proposed model and the baselines, you can use our pre-gene
 ## Deep Accident Prediction (DAP) Model
 Our Deep Accident Prediction model comprises several important components including _Recurrent Component_, _Embedding Component_, _Description-to-Vector Component_, _Points-Of-Interest Component_, and _Fully-connected Component_. The following image shows a demonstration of this model: <center><img src="/files/dap.png" width="600"></center>
 
-The implementation of this model can be found in the `2-DAP` directory. 
+The implementation of this model can be found here: `2-DAP/DAP.ipynb`. 
 
 ## Baseline Models
-In terms of baselines, we employed three models: Logistic Regressions (LR), Gradient Boosted classifier (GBC), and a FeedForward Neural Network Model (DNN). The implementation of these models can be found in `3-Baselines`. There you find one `python` script for each baseline, with instruction on how to run each script provided inside the script. 
+In terms of baselines, we employed the following models: 
+
+* Logistic Regressions (LR): Find sample code in `3-Baselines/Traditional_Models_Sklearn.py`. 
+* Gradient Boosted classifier (GBC): Find sample code in `3-Baselines/Traditional_Models_Sklearn.py`. 
+* FeedForward Neural Network Model (DNN): An implementation of this model can be found in `3-Baselines/DNN.ipynb`. 
+* DAP Without Embedding Component (DAP-NoEmbed): An implementation of this model can be found in `2-DAP/DAP-NoEmbed.ipynb`. 
 
 ## How to Run the Code? 
 All implementations are in `python`, with deep learning models developed in `Keras` using `Tensorflow` as backend. For non-deep learning baselines (i.e., LR and GBC) you can run codes on CPU machines. But for deep-learning models, we recommend using GPU machines to speed-up the process. 
