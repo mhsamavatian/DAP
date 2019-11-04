@@ -3,8 +3,8 @@
     
     Content: This code is to perform accident prediction based on Logistic Regression and Gradient Boosting Decision Classifier. 
     Input: The input for these models is a feature vector consisting of traffic, time, weather, POI (geohash), and Desc2Vec(NLP) data. 
-        - See section 5.1 of paper for more details about these categories of features. 
-    Process: The process is to employ data from the past 2 hours to make prediction for the current 15 minutes time interval.    
+        - See section 5.1 of the paper for more details about these categories of features. 
+    Process: The process is to employ data from the past 2 hours to make a prediction for the current 15 minutes time interval.    
  
 '''
 
@@ -16,7 +16,7 @@ import sys
 import psutil
 
 import math
-from multiprocessing import cpu_count,Pool 
+from multiprocessing import cpu_count
 import multiprocessing
 
 from sklearn.metrics import recall_score,precision_score,f1_score,accuracy_score
@@ -42,28 +42,8 @@ cores = cpu_count() #Number of CPU cores on your system
 partitions = cores
 SEQ=8
 
-class WithExtraArgs(object):
-    def __init__(self, func, **args):
-        self.func = func
-        self.args = args
-    def __call__(self, df):
-        return self.func(df, **self.args)
 
-''' Helper functions to support parall computing'''
-
-def applyParallel(data, func,pool,partition, kwargs):
-    data_split = [data[i:i + partition] for i in xrange(0, len(data), partition)]
-    #data_split = np.array_split(data, min(partitions,data.shape[0]))
-    data =pool.map(WithExtraArgs(func, **kwargs), data_split)
-    #data = pd.concat(pool.map(WithExtraArgs(func, **kwargs), data_split))
-    return data
-
-def parallelize(data, func,pool,partition):
-    data_split = [data[i:i + partition] for i in xrange(0, len(data), partition)]
-    #data_split = np.array_split(data, partitions)
-    data =pool.map(func, data_split)
-    return data
-
+''' A Helper function to re-shape input '''
 def reshape_cat(array,category):
     l=[]
     b = array[:,0:-14]
@@ -179,8 +159,11 @@ def make_models(city='Atlanta',model='LR',category=None,metric='precision'):
     best_params = mypred.train()
     dict_out = mypred.evaluate()
     return pd.DataFrame(dict_out),best_params
-    
+
+# this code would use these models
 models     = ['LR', 'GBC']
+
+# this code would test different feature categories separately, and also the set of all data attributes 
 categories = [None, ['traffic'], ['time'], ['weather'], ['geohash'], ['NLP']]
 
 writer = open('Results/Traditional_For_{}.csv'.format(CITY), 'w')
@@ -188,7 +171,7 @@ writer.write('Model,Category,ReportType,F1,Precision,Recall,Support\n')
 writer.close()
 
 for m in models:
-    for c in categories: # when using None as category, it will use the entire set of input features
+    for c in categories: # when using None as a category, it will use the entire set of input features
         print '\n', m, c
         No_Acc   = []
         Acc      = []        
