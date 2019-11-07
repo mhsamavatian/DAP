@@ -9,7 +9,7 @@ One important process is to transform raw input data into the form of input for 
 
 * __Step 3__: Run `3-DataCleaningAndIntegration.ipynb` for data cleaning, and preparation for integration with POI data. 
 
-* __Step 4__: Run `4-FinalTrainAndTestDataPreparation.ipynb` to prepare final train and test data. This includes creating sample entries, and negative sampling for non-accident data samples. There is two version code: single thread vs multi-thread. The multi-thread version uses more system cores but it needs more memory as well. It is more suitable for running on servers. Single-thread is for running on desktop devices for generating smaller train-test sets. 
+* __Step 4__: Run `4-FinalTrainAndTestDataPreparation.ipynb` to prepare final train and test data. This includes creating sample entries, and negative sampling for non-accident data samples. There are two versions of the code: single thread vs multi-thread. The multi-thread version uses more system cores but it needs more memory as well. It is more suitable for running on servers. Single-thread is for running on desktop devices for generating smaller train-test sets. 
 
 Implementations of these steps can be found in `1-GenerateFeatureVector`. Also, note that the sample data and codes are for those cities that we used in the paper (e.g., Atlanta, Austin, Charlotte, Dallas, Houston, and Los Angeles). 
 
