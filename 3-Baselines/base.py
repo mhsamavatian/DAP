@@ -48,7 +48,7 @@ from itertools import cycle
 from keras_self_attention import SeqSelfAttention
 
 from utils import *
-
+SEQ=8 #sequence for LSTM
 class base_model(object):        
     def __init__(self,n_jobs=10,act=ACT_POSTERIOR,city='Atlanta'): 
         self.n_jobs=n_jobs
