@@ -49,6 +49,26 @@ from keras_self_attention import SeqSelfAttention
 
 from utils import *
 SEQ=8 #sequence for LSTM
+
+verbose = 2
+dropout=0.2
+VAL_SPLIT = 0.2
+patience = 15
+lr=0.01
+weight_decay = 0.0000
+lr_decay=1e-6
+ADD_ON_LAYERS = True
+ACT_PRIOR = 'sigmoid'
+ACT_POSTERIOR = 'relu'
+LSTM_UNIT = 128
+GEOHASH_UNIT = 128
+EMBEDDING_UNIT = 128
+Embedding_outdim = 128
+NLP_UNIT = 128
+SEQ_UNIT = 256
+DENSE_CONCAT = 512
+CONV_UNIT = 32
+weights = np.array([1,1])
 class base_model(object):        
     def __init__(self,n_jobs=10,act=ACT_POSTERIOR,city='Atlanta'): 
         self.n_jobs=n_jobs
