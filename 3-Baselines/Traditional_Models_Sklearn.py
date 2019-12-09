@@ -87,6 +87,7 @@ class base_model(object):
     # to load train and test data (these sets are pre-generated as numpy arrays)
     def load_data(self,category=None):
         print ('load and test: shapes for train and test X and Y')
+        #last item [-1] is the geocode index only used when have embbeding layer
         self.X_train = np.load('train_set/X_train_'+CITY+'.npy')[:,0:-1]
             
         self.y_train = np.load('train_set/y_train_'+CITY+'.npy')
