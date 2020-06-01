@@ -33,4 +33,4 @@ In terms of baselines, we employed the following models:
 All implementations are in `python`, with deep learning models developed in `Keras` using `Tensorflow` as backend. For non-deep learning baselines (i.e., LR and GBC) you can run codes on CPU machines. But for deep-learning models, we recommend using GPU machines to speed-up the process. 
 
 ## Acknowledgment 
-* Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, Radu Teodorescu, and Rajiv Ramnath. “Accident Risk Prediction based on Heterogeneous Sparse Data: New Dataset and Insights” In proceedings of the 27th ACM SIGSPATIAL, International Conference on Advances in Geographic Information Systems. ACM, 2019. 
+* Moosavi, Sobhan, Mohammad Hossein Samavatian, Srinivasan Parthasarathy, Radu Teodorescu, and Rajiv Ramnath. “[Accident Risk Prediction based on Heterogeneous Sparse Data: New Dataset and Insights](https://arxiv.org/abs/1909.09638)” In proceedings of the 27th ACM SIGSPATIAL, International Conference on Advances in Geographic Information Systems. ACM, 2019. 
