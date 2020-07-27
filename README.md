@@ -39,6 +39,7 @@ pip install keras_metrics
 pip install keras_self_attention
 pip install scikit-learn==0.20.0
 ```
+Please note that you may choose to use other versions of `tensorflow` and/or `keras`, but make that they are compatible. 
 
 ## How to Run the Code? 
 All implementations are in `python`, with deep learning models developed in `Keras` using `Tensorflow` as backend. For non-deep learning baselines (i.e., LR and GBC) you can run codes on CPU machines. But for deep-learning models, we recommend using GPU machines to speed-up the process. 
