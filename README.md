@@ -29,6 +29,17 @@ In terms of baselines, we employed the following models:
 * FeedForward Neural Network Model (DNN): An implementation of this model can be found in `3-Baselines/DNN.ipynb`. 
 * DAP Without Embedding Component (DAP-NoEmbed): An implementation of this model can be found in `2-DAP/DAP-NoEmbed.ipynb`. 
 
+## System Requirements 
+We recommend using `Python 3.x`, and install the following to be able to properly run the code:
+
+```
+pip install tensorflow==1.14.0
+pip install keras==2.3.1
+pip install keras_metrics
+pip install keras_self_attention
+pip install scikit-learn==0.20.0
+```
+
 ## How to Run the Code? 
 All implementations are in `python`, with deep learning models developed in `Keras` using `Tensorflow` as backend. For non-deep learning baselines (i.e., LR and GBC) you can run codes on CPU machines. But for deep-learning models, we recommend using GPU machines to speed-up the process. 
 
